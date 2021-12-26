@@ -1,0 +1,22 @@
+controller_joint_names: ['', 'front_left_leg_joint', 'front_left_wheel_joint', 'front_right_leg_joint', 'front_right_wheel_joint', 'rear_axle_joint', ]
+rk_bot:
+  # default controller
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # left wheel controller
+  left_wheel_controller:
+    type: effort_controllers/JointPositionController 
+    joint: front_left_leg_joint  
+    pid : {p: 100.0 , i: 0.01 , d: 10.0} 
+  # right wheel controller
+  right_wheel_controller:
+    type: effort_controllers/JointPositionController  
+    joint: front_right_leg_joint  
+    pid : {p: 100.0 , i: 0.01 , d: 10.0}
+  # left wheel controller
+  rear_wheels_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: rear_axle_joint  
+    pid : {p: 100.0 , i: 0.01 , d: 10.0}
