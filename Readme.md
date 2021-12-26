@@ -1,4 +1,4 @@
-
+# Mobile bot simulation in Gazebo and Rviz
 In order to run the project follow the below steps:
 
 
